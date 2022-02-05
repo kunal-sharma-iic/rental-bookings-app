@@ -3,3 +3,8 @@ pandas
 flask-wtf
 flask-bootstrap
 email_validator
+flask_sqlalchemy
+flask_login
+psycopg2
+MySQLdb
+mysqlclient 
