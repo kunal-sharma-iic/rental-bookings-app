@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page">Rental Bookings</a>
+              </li>
+            </ul>
+          </div>
+        <!-- </div> -->
+        <ul class="nav nav-tabs nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+      <div class="col-md-12 text-center">
+        <p class = "h4">Instructions For App:</p>
+        <p class = "h7">Customers-Add : Add the Details for Customer</p>
+        <p class = "h7">Customers-View : View the Details for Existing Customer</p>
+        <p class = "h7">Rental Bookings-Add : Add Deatils regarding Bookings</p>
+        <p class = "h7">Rental Bookings-View : View Details regarding Existing Bookings</p>
+        <p class = "h7">Inventory-View : View the Inventory Data</p>
+        <p class = "h7">Inventory-Update : *TODO : Need to Be added </p>
+      </div>
+      <!-- <br></br> -->
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename = 'customer.jpg') }}" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Customers</h5>
+                  <p class="card-text">Add new Customers or view the existing customers deatils.</p>
+                  <a href="/add_custom" name = "add_custom" class="btn btn-primary">Add</a>
+                  <a href="/view_custom" class="btn btn-primary">View</a>
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename = 'cars.png') }}" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Rental Bookings</h5>
+                  <p class="card-text">Add new bookings or view the existing booking details.</p>
+                  <a href="/add_rent_book" class="btn btn-primary">Add</a>
+                  <a href="/view_rent" class="btn btn-primary">View</a>
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename = 'inv.jfif') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Inventory</h5>
+                  <p class="card-text">View the Inventory data or update the inventory data as per convience (Note - * TODO: Update "Route").</p>
+                  <a href="/inventory" class="btn btn-primary">View</a>
+                  <a href="#" class="btn btn-primary">Update</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>

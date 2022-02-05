@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block nav %}
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('home') }}"> Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('logout') }}"> Logout </a>
+              </li> 
+{% endblock %}
+{% block content %}
+<div class='container mt-4'>
+    <div class='row mt-5'>
+        <div class='col-4 mx-auto'>
+            <div class="col-md-12 text-center">
+          <form class = "form-horizontal" action="" method='POST'>
+            <div class="container-fluid">
+                <h2>Rental Details</h2>
+            </div>
+            <br></br>
+            <select name="option1" id = "package-list" class="selectpickerform-control" required>
+                <option value="" disabled selected hidden>Customer Name</option>
+            {% for package in c_name %}
+                <option name="{{ package }}" value="{{ package }}">{{ package }}</option>
+            {% endfor %}
+            </select>
+            </div>
+            <br></br>
+            <label for="rental date">Rental Date:</label>
+            <input type="date" id="rental date" name="rental_date">
+            <br></br>
+              <label for="return date" >Return Date:</label>
+                <input type="date" id="return date" name="return_date">
+                <br></br>
+                <div class="col-md-12 text-center">
+                <select name="option2" id = "package-list-2" class="selectpickerform-control" required>
+                    <option value="" disabled selected hidden>Vehcile Type</option>
+                {% for type in v_type %}
+                    <option name="{{ type }}" value="{{ type }}">{{ type }}</option>
+                {% endfor %}
+                </select>
+                <br></br><br></br>
+                <div class="col-md-12 text-center">
+                <div class="form-group">        
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit"name = "submit" value = "submit" class="btn btn-primary">Add Detail</button>
+                    </div>
+                    </div>
+                  </div>
+          </form>
+        </div>
+        </div>
+    </div>
+    </div>
+    {% if status == 1 %}
+    <p class = "h4" align = "center">{{msg}}</p>
+ {% endif %}  
+{% endblock %}
